@@ -1,0 +1,152 @@
+﻿@model  MP_TS_SHOP_.Controllers.ProductsAdminController.ViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout Admin.cshtml";
+}
+<div class="py-5">
+    <h2 style="color: #F3F5F9;  ">Products</h2>
+
+
+    <div id="reportsPage">
+        <div class="container mt-5">
+            <div class="row tm-content-row">
+                <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-products">
+                        <h2 class="tm-block-title">Products Tables</h2>
+
+                        <div class="tm-product-table-container">
+                            <table class="table table-hover tm-table-small tm-product-table">
+                                <tr @*style="position: fixed; background-color: #497174"*@>
+                                    <th>
+                                        #Product Num.
+                                    </th>
+                                    <th>
+                                        First Image
+                                    </th>
+                                    <th>
+                                        Category Name
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    @*<th>
+                        @Html.DisplayNameFor(model => model.State)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Size)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Color)
+                    </th>*@
+
+
+                                    @*<th>
+                        Product Owner
+                    </th>*@
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+
+
+                                @foreach (var item in Model.products)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ProductId)
+                                        </td>
+                                        <td>
+                                            <img src="~/Image/@Html.DisplayFor(modelItem => item.Image1)" style="width:60px;height:60px" class="thumbnail" />
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+
+                                        @*@if (item.State == true)
+                        {
+
+
+                            <td>New</td>
+                        }
+                        else
+                        {
+                            <td>Old</td>
+                        }
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Size)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Color)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.Name)
+                        </td>*@
+                                        <td class="text-center">
+                                            <a href="/ProductsAdmin/Delete/@item.ProductId"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="/ProductsAdmin/Details/@item.ProductId"><i style="font-size: 1.1rem; color: #fff;" class="fa-sharp fa-solid fa-circle-info"></i></a>
+
+                                        </td>
+
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                        <!-- table container -->
+                        @*<a href="/ProductsAdmin/Create" class="btn btn-primary btn-block text-uppercase mb-3">Add new Products</a>*@
+
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
+                        <h2 class="tm-block-title">Product Categories</h2>
+                        <div class="tm-product-table-container">
+                            <table class="table tm-table-small tm-product-table">
+                                <tbody>
+                                    @foreach (var item in Model.categories)
+                                    {
+                                        <tr>
+                                            <td class="tm-product-name">@item.CategoryName</td>
+                                            <td class="text-center">
+                                                <a href="/Categories/Delete/@item.CategoryId"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="/Categories/Details/@item.CategoryId"><i style="font-size: 1.1rem; color: #fff;" class="fa-sharp fa-solid fa-circle-info"></i></a>
+
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- table container -->
+                        
+                        <a href="/Categories/Create" class="btn btn-primary btn-block text-uppercase mb-3">Add new category</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+</div>
