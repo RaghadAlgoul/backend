@@ -1,0 +1,438 @@
+﻿@model MP_TS_SHOP_.Models.Product
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .custom-file-upload {
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        text-align:center;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .grid-containe {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        justify-content: space-between;
+    }
+
+</style>
+<div class="py-5">
+    <h2 class="TextColor">Edit</h2>
+
+    @using (Html.BeginForm("Edit", "ProductsProvider", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ProductId)
+
+
+    <h2 class="TextColor py-5">Images</h2>
+    <br />
+    <div class="grid-containe">
+
+
+
+        <div>
+            <div class="row">
+
+                <a href="#">
+                    @if (ViewBag.Image1 == null)
+                    {
+                        <img class="card-img img-fluid" src="~/Image/uploadImage" alt="Product Image 1" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                    else
+                    {
+                        <img class="card-img img-fluid" src="~/Image/@Html.DisplayFor(model => model.Image1)" alt="Product Image 1" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                </a>
+
+            </div>
+            <div class="row">
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/*" name="Image1" class="form-control" />
+                    Edit Image 1
+                </label>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="row">
+                <a href="#">
+                    @if (ViewBag.Image2 != null)
+                    {
+                        <img class="card-img img-fluid" src="~/Image/@Html.DisplayFor(model => model.Image2)" alt="Product Image 1" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                    else
+                    {
+                        <img class="card-img img-fluid" src="~/Image/UnaviableImage.png" alt="Product Image 2" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                </a>
+
+            </div>
+            <div class="row">
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/*" name="Image2" class="form-control" />
+                    Edit Image 2
+                </label>
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="row">
+
+                <a href="#">
+                    @if (ViewBag.Image3 != null)
+                    {
+                        <img class="card-img img-fluid" src="~/Image/@Html.DisplayFor(model => model.Image3)" alt="Product Image 1" style="width: 200px; height: 250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                    else
+                    {
+                        <img class="card-img img-fluid" src="~/Image/UnaviableImage.png" alt="Product Image 2" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                </a>
+
+            </div>
+            <div class="row">
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/*" name="Image3" class="form-control" />
+                    Edit Image 3
+                </label>
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="row">
+
+                <a href="#">
+                    @if (ViewBag.Image4 != null)
+                    {
+                        <img class="card-img img-fluid" src="~/Image/@Html.DisplayFor(model => model.Image4)" alt="Product Image 1" style="width: 200px; height: 250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                    else
+                    {
+                        <img class="card-img img-fluid" src="~/Image/UnaviableImage.png" alt="Product Image 2" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                </a>
+
+            </div>
+            <div class="row">
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/*" name="Image4" class="form-control" />
+                    Edit Image 4
+                </label>
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="row">
+
+                <a href="#">
+                    @if (ViewBag.Image5 != null)
+                    {
+                        <img class="card-img img-fluid" src="~/Image/@Html.DisplayFor(model => model.Image5)" alt="Product Image 1" style="width: 200px; height: 250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                    else
+                    {
+                        <img class="card-img img-fluid" src="~/Image/UnaviableImage.png" alt="Product Image 2" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                </a>
+
+            </div>
+            <div class="row">
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/*" name="Image5" class="form-control" />
+                    Edit Image 5
+                </label>
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="row">
+
+                <a href="#">
+                    @if (ViewBag.Image6 != null)
+                    {
+                        <img class="card-img img-fluid" src="~/Image/@Html.DisplayFor(model => model.Image6)" alt="Product Image 1" style="width: 200px; height: 250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                    else
+                    {
+                        <img class="card-img img-fluid" src="~/Image/UnaviableImage.png" alt="Product Image 2" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                </a>
+
+            </div>
+            <div class="row">
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/*" name="Image6" class="form-control" />
+                    Edit Image 6
+                </label>
+            </div>
+        </div>
+
+
+
+
+        <div>
+            <div class="row">
+
+                <a href="#">
+                    @if (ViewBag.Image7 != null)
+                    {
+                        <img class="card-img img-fluid" src="~/Image/@Html.DisplayFor(model => model.Image7)" alt="Product Image 1" style="width: 200px; height: 250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                    else
+                    {
+                        <img class="card-img img-fluid" src="~/Image/UnaviableImage.png" alt="Product Image 2" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                </a>
+
+            </div>
+            <div class="row">
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/*" name="Image7" class="form-control" />
+                    Edit Image 7
+                </label>
+            </div>
+
+        </div>
+
+
+
+
+        <div>
+            <div class="row">
+
+                <a href="#">
+                    @if (ViewBag.Image8 != null)
+                    {
+                        <img class="card-img img-fluid" src="~/Image/@Html.DisplayFor(model => model.Image8)" alt="Product Image 1" style="width: 200px; height: 250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                    else
+                    {
+                        <img class="card-img img-fluid" src="~/Image/UnaviableImage.png" alt="Product Image 2" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                </a>
+
+            </div>
+            <div class="row">
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/*" name="Image8" class="form-control" />
+                    Edit Image 8
+                </label>
+            </div>
+
+        </div>
+
+
+
+        <div>
+            <div class="row">
+
+                <a href="#">
+                    @if (ViewBag.Image9 != null)
+                    {
+                        <img class="card-img img-fluid" src="~/Image/@Html.DisplayFor(model => model.Image9)" alt="Product Image 1" style="width: 200px; height: 250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                    else
+                    {
+                        <img class="card-img img-fluid" src="~/Image/UnaviableImage.png" alt="Product Image 2" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                </a>
+
+            </div>
+            <div class="row">
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/*" name="Image9" class="form-control" />
+                    Edit Image 9
+                </label>
+            </div>
+
+        </div>
+
+
+        <div>
+            <div class="row">
+
+                <a href="#">
+                    @if (ViewBag.Image10 != null)
+                    {
+                        <img class="card-img img-fluid" src="~/Image/@Html.DisplayFor(model => model.Image10)" alt="Product Image 1" style="width: 200px; height: 250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                    else
+                    {
+                        <img class="card-img img-fluid" src="~/Image/UnaviableImage.png" alt="Product Image 2" style="width:200px;height:250px; padding: 10px; border: solid 2px #497174; background-color: white">
+
+                    }
+                </a>
+
+            </div>
+            <div class="row">
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/*" name="Image10" class="form-control" />
+                    Edit Image 10
+                </label>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <div class="col-lg-7 mt-5">
+        <div class="card" style="border: solid 2px #497174">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col-3"><h5 style="font-weight: bold">Catigory Name</h5></div>
+                    <div class="col-8">
+                        <h5 style="font-weight: bold">
+                            @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                        </h5>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-3"><h5 style="font-weight: bold">Name</h5></div>
+                    <div class="col-8">
+                        <h5 style="font-weight: bold">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </h5>
+                    </div>
+                </div>
+                <br />
+
+                <div class="row">
+                    <div class="col-3"><h5 style="font-weight: bold">Color</h5></div>
+                    <div class="col-8">
+                        <h5 style="font-weight: bold">
+                            @Html.EditorFor(model => model.Color, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Color, "", new { @class = "text-danger" })
+                        </h5>
+                    </div>
+                </div>
+                <br />
+
+
+                <div class="row">
+                    <div class="col-3"><h5 style="font-weight: bold">Size</h5></div>
+                    <div class="col-8">
+                        <h5 style="font-weight: bold">
+                            @Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
+                        </h5>
+                    </div>
+                </div>
+                <br />
+
+
+                <div class="row">
+                    <div class="col-3"><h5 style="font-weight: bold">Price</h5></div>
+                    <div class="col-8">
+                        <h5 style="font-weight: bold">
+                            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        </h5>
+                    </div>
+                </div>
+                <br />
+
+
+                <div class="row">
+                    <div class="col-3"><h5 style="font-weight: bold">Description</h5></div>
+                    <div class="col-8">
+                        <h5 style="font-weight: bold">
+
+                            <textarea class="form-control text-box single-line" id="Description" name="Description" rows="3">@Html.DisplayFor(model => model.Description)</textarea>
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </h5>
+                    </div>
+                </div>
+                <br />
+
+
+                <div class="row">
+                    <div class="col-3"><h5 style="font-weight: bold">State</h5></div>
+                    <div class="col-8">
+                        <h5 style="font-weight: bold">
+                            @Html.EditorFor(model => model.State)
+                            @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+                        </h5>
+                    </div>
+                </div>
+                <br />
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>

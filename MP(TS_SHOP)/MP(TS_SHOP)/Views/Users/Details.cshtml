@@ -1,0 +1,250 @@
+﻿@model MP_TS_SHOP_.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout Admin.cshtml";
+}
+
+@*<h2>Details</h2>
+
+    <div>
+        <h4>User</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UserImage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserImage)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserFaceBook)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserFaceBook)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserTweeter)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserTweeter)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserInstagram)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserInstagram)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserLocation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserLocation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserAbout)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserAbout)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.State)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.State)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AspNetUser.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AspNetUser.Email)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+
+
+<section>
+    <div class="container py-5">
+        
+
+        <div class="row">
+       
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <img src="~/Image/@Html.DisplayFor(model => model.UserImage)" alt="avatar"
+                                 class="rounded-circle img-fluid" style="width: 150px;">
+                            <h5 class="my-3">@Html.DisplayFor(model => model.Name)</h5>
+                            @if (ViewBag.State == true)
+                            {
+                                <p class="text-muted TextColor">Saller at TS SHOP</p>
+
+                            }
+                            else if (ViewBag.State == false)
+                            {
+                                <p class="text-muted TextColor">User on Wating list</p>
+
+                            }
+                            <div class="container">
+                                <div class="row" style="justify-content:center">
+                                    <div class="col-4">
+                                        <a href="@Html.DisplayFor(model => model.UserTweeter)">
+                                            <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="@Html.DisplayFor(model => model.UserInstagram)">
+                                            <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="@Html.DisplayFor(model => model.UserFaceBook)">
+                                            <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0"> Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">@Html.DisplayFor(model => model.Name)
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">@Html.DisplayFor(model => model.Email)</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Phone</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">@Html.DisplayFor(model => model.PhoneNumber)</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Location</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">@Html.DisplayFor(model => model.UserLocation)</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Gender</p>
+                            </div>
+                            <div class="col-sm-9">
+                                @if (ViewBag.Gender == true)
+                                {
+                                    <p class="text-muted mb-0">Female</p>
+
+                                }
+                                else
+                                {
+                                    <p class="text-muted mb-0">Male</p>
+
+                                }
+
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">About @Html.DisplayFor(model => model.Name)</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">@Html.DisplayFor(model => model.UserAbout)</p>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row" style="float:right">
+                            <div>
+                                <a href="/Users/EditReject/@Html.DisplayFor(model => model.UserId)"  class="btn btn-danger">Reject</a>
+                            </div>
+                            <div>
+                                <a href="/Users/EditAcc/@Html.DisplayFor(model => model.UserId)" style="margin-left:20px" class="btn btn-success">Accsept</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+

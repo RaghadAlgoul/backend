@@ -1,0 +1,213 @@
+﻿body {
+    background-color: #F3F5F9;
+}
+
+a {
+    color: rgb(252,252,252)
+}
+
+#logoImg {
+    height: 54px;
+    width: 54px;
+    margin-top: -5px;
+    margin-right: 5px;
+}
+
+#TitleNav, #footerTxt, h4, li {
+    color: #F3F5F9;
+    font-family: cursive;
+}
+
+a:hover ,.TextColor {
+    color: #497174;
+}
+
+#sliderNav, #UploadBtn {
+    background-color: #E26F66;
+    color: #F3F5F9;
+    font-weight: bold;
+    padding: 7px;
+    border: solid 0px white;
+    border-radius: 15px;
+}
+
+#homeImg1 {
+    width: 400px;
+    height: 400px;
+    margin-left: 17%;
+}
+
+.headerTxt {
+    width: 100%;
+    margin-top: 50px;
+    font-weight: bold;
+    color: #497174;
+    font-family: cursive;
+    text-align: center;
+    /*    color: #212934;
+*/
+}
+
+.catigoryTxt {
+    color: #F3F5F9;
+    font-family: cursive;
+    margin-top: 50px;
+    font-weight: bold;
+    font-size:25px;
+}
+
+#mission {
+    padding: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #497174;
+    color: #F3F5F9;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#saller, #categorySec ,.products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between
+}
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+/**/}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+/*    background-color: #bbb;
+*/    color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: #497174;
+    border-radius: 50%;
+    border: solid 5px #E26F66;
+    color: white;
+    transform: rotateY(180deg);
+}
+.accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.accordion-button {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-normal);
+    padding-top: 1.5rem;
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    padding-left: 0;
+}
+
+.accordion-body {
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+
+::after, ::before {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+#LogInBtn {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    background-color: #e26f66;
+    color: #F3F5F9;
+    font-weight:bold;
+}
+.Next {
+    background-color: #E26F66;
+    border: none;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    border-radius: 7px;
+    cursor: pointer
+}
+.NextText {
+    padding: 17px;
+    font-weight: bold;
+    color: #F3F5F9
+}
+.ProductsSec {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    flex-wrap:nowrap
+}
+
+
+
+@media only screen and (min-device-width:481px)and (max-device-width:768px) {
+    #saller, #categorySec, .ProductsSec {
+        display: grid;
+        grid-auto-columns: auto auto;
+    }
+    
+    }
+
+    @media only screen and (min-device-width:0)and (max-device-width:480px) {
+        #saller, #categorySec, .ProductsSec {
+            display: grid;
+            grid-auto-columns: auto;
+        }
+        .h-custom {
+            height: 100%;
+        }
+    }
